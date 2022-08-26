@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(to right bottom, #7ed56fcc, #28b485cc);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #f1b24a;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(255, 153, 102, 0.5),
+      rgb(255, 94, 98, 0.5)
+    ),
+    url(../images/hero-small.jpg);
+  background-size: cover;
+  background-position: top;
+  width: 70%;
+  margin: 80px 0;
+}
+
+#main-header {
+  font-size: 40px;
+  font-weight: 700;
+  font-family: "Space Mono", monospace;
+  text-align: center;
+  color: #343a40;
+  padding: 15px 0 15px 0;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.task_details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 90%;
+}
+
+.task_details .input_description input {
+  width: 70%;
+}
+
+.task_details label {
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  width: 12%;
+  display: inline-block;
+}
+.task_details input {
+  background-color: transparent;
+  transition: all ease-in-out 0.3s;
+}
+.task_details select {
+  background-color: #333;
+  transition: all ease-in-out 0.3s;
+}
+
+.task_details input,
+select {
+  padding: 10px;
+  border: 2px solid transparent;
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 40%);
+}
+
+.task_details input:hover {
+  border: 2px solid #333;
+}
+
+.task_details select:hover {
+  border: 2px solid #333;
+}
+
+.task_details input::placeholder {
+  color: #fff;
+}
+
+/* button */
+
+/* <!-- HTML !--> */
+/* <button class="button-24" role="button">Button 24</button> */
+
+.btn {
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  transition: all ease-in 0.3s;
+}
+
+.button-add {
+  background: #7ed56fcc;
+  border: 1px solid #7ed56fcc;
+}
+
+.button-del {
+  background: #ff4742;
+  border: 1px solid #ff4742;
+  align-self: center;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #333;
+}
+
+.btn:active {
+  opacity: 0.5;
+}
+.task_buttons {
+  align-self: center;
+}
+
+.task_buttons span {
+  margin-left: 5px;
+}
+
+.task-list-container {
+  width: 90%;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.task-list-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.task-list-container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style-type: none;
+}
+
+.task-list-container ul li {
+  display: grid;
+  grid-template-columns: 10% 20% 20% 50%;
+  padding: 10px;
+  justify-content: space-between;
+  color: #fff;
+  align-items: center;
+  /* background-color: rgba(153, 153, 153, 0.8); */
+}
+.task-list-container ul li p {
+  word-wrap: break-word;
+}
+
+.task-list-container ul li #dueDate {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#dueDate i {
+  padding-right: 10px;
+  color: #343a40;
+}
+#taskDescription {
+  text-transform: capitalize;
+}
+
+.task-list-container ul li.PERSONAL {
+  background-color: #ffbe0b;
+}
+.task-list-container ul li.WORK {
+  background-color: #fb5607;
+}
+
+.task-list-container ul li.SCHOOL {
+  background-color: #ff006e;
+}
+
+.task-list-container ul li.HEALTH {
+  background-color: #8338ec;
+}
+.task-list-container ul li.FINANCE {
+  background-color: #3a86ff;
+}
+.task-list-container ul li.URGENT {
+  background-color: #d00000;
+}
+.task-list-container ul li.SHOPPING {
+  background-color: #2c6e49;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/b12b8e59b0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="main-header">Tasky</h1>
+      <form class="form-container" action="/create_task" method="POST">
+        <div class="task_details">
+          <div class="input_description">
+            <label for="description">Description</label>
+            <input
+              id="description-input"
+              type="text"
+              name="description"
+              placeholder="What do you need to do?...."
+              required
+            />
+          </div>
+
+          <div>
+            <label for="category">Category</label>
+            <select
+              name="category"
+              id="select-category"
+              aria-placeholder="Please choose a Category"
+              required
+            >
+              <option value="">Please choose a Category</option>
+              <option value="HEALTH">HEALTH</option>
+              <option value="WORK">WORK</option>
+              <option value="FINANCE">FINANCE</option>
+              <option value="PERSONAL">PERSONAL</option>
+              <option value="SCHOOL">SCHOOL</option>
+              <option value="URGENT">URGENT</option>
+              <option value="SHOPPING">SHOPPING</option>
+            </select>
+          </div>
+          <div>
+            <label for="date">Due Date</label>
+            <input type="date" name="date" required />
+          </div>
+        </div>
+        <div class="task_buttons">
+          <button class="btn button-add" id="add">
+            <i class="fa-solid fa-plus"></i>
+            <span>Add Task</span>
+          </button>
+        </div>
+      </form>
+
+      <div class="task-list-container">
+        <form action="/delete_task">
+        <ul>
+          <% for(let i of task_List){ %>
+          <li class="<%=i.category %>">
+            <input type="checkbox"  name="<%= i._id %>" />
+            <p id="taskDescription"><%= i.description %></p>
+            <p id="taskCategory"><%= i.category %></p>
+            <p id="dueDate">
+              <i class="fa-solid fa-calendar-days"></i><%=i.date %>
+            </p>
+          </li>
+
+          <% } %>
+        </ul>
+        <div class="task_buttons">
+          <button type="submit" class="btn button-del" id="delete">
+            <i class="fa-solid fa-trash-can"></i>
+            <span>Delete Task</span>
+          </button>
+        </div>
+      </div>
+    </form>
+    </div>
+    <script type="text/javascript" src="/js/home.js"></script>
+  </body>
+</html>
